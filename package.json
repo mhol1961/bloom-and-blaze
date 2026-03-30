@@ -1,0 +1,18 @@
+{
+  "name": "budlife-nc-monorepo",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev:storefront": "pnpm --filter @budlife/storefront dev",
+    "dev:admin": "pnpm --filter @budlife/admin dev",
+    "dev": "pnpm run --parallel dev:storefront dev:admin",
+    "build:storefront": "pnpm --filter @budlife/storefront build",
+    "build:admin": "pnpm --filter @budlife/admin build",
+    "build": "pnpm run --parallel build:storefront build:admin",
+    "lint": "pnpm -r lint"
+  },
+  "engines": {
+    "pnpm": ">=8"
+  }
+}

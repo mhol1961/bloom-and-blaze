@@ -1,0 +1,22 @@
+// Re-export all types from the shared package
+export type {
+  Product,
+  ProductVariant,
+  ProductImage,
+  Customer,
+  CartItem,
+  CartState,
+  CartSession,
+  Order,
+  LabResult,
+  RestrictedState,
+  AgeVerificationSession,
+  AgeVerificationData,
+  UserLocation,
+  ProductReview,
+  NewsletterSubscription,
+  AdminUser,
+  AdminActivityLog,
+  DashboardMetrics,
+  FilterOptions,
+} from '@budlife/shared'

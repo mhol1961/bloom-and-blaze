@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Lexend:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 45 15% 90%;
+    --card: 0 0% 10%;
+    --card-foreground: 45 15% 90%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 45 15% 90%;
+    --primary: 158 64% 52%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 45 15% 90%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 45 8% 60%;
+    --accent: 158 64% 52%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 158 32% 25%;
+    --input: 158 32% 25%;
+    --ring: 158 64% 52%;
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-black text-cream font-sans antialiased;
+    background-attachment: fixed;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-black-800;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-forest-600 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-emerald-500;
+  }
+}
+
+@layer components {
+  /* Button Styles */
+  .btn {
+    @apply inline-flex items-center justify-center rounded-xl px-6 py-3 font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-emerald-600 to-forest-600 hover:from-emerald-500 hover:to-forest-500 text-white shadow-lg hover:shadow-glow-lg transform hover:scale-105 focus:ring-emerald-400;
+  }
+
+  .btn-secondary {
+    @apply bg-black-800 text-cream-100 border border-forest-600 hover:bg-forest-700 hover:border-emerald-500 focus:ring-forest-400;
+  }
+
+  .btn-ghost {
+    @apply text-cream-200 hover:text-emerald-300 hover:bg-cream/5 focus:ring-cream/20;
+  }
+
+  .btn-outline {
+    @apply border border-emerald-500 text-emerald-400 hover:bg-emerald-500 hover:text-white focus:ring-emerald-400;
+  }
+
+  /* Card Styles */
+  .card {
+    @apply bg-black-800 border border-forest-700 rounded-2xl shadow-dark;
+  }
+
+  .card-hover {
+    @apply hover:border-emerald-500 hover:shadow-glow-lg transition-all duration-500;
+  }
+
+  /* Input Styles */
+  .input {
+    @apply flex h-12 w-full rounded-xl border border-forest-600 bg-black-700 px-4 py-2 text-cream-100 placeholder:text-cream-400 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-400/20 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .input-group {
+    @apply space-y-2;
+  }
+
+  .label {
+    @apply text-sm font-medium text-cream-200;
+  }
+
+  /* Premium Container */
+  .container-premium {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Text Gradients */
+  .text-gradient {
+    @apply bg-gradient-to-r from-emerald-400 via-gold-400 to-emerald-400 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-gold-400 to-gold-600 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-emerald {
+    @apply bg-gradient-to-r from-emerald-400 to-forest-400 bg-clip-text text-transparent;
+  }
+
+  /* Background Gradients */
+  .bg-premium {
+    @apply bg-gradient-to-br from-black via-black-800 to-forest-900;
+  }
+
+  .bg-premium-light {
+    @apply bg-gradient-to-br from-black-800 via-black-700 to-forest-800;
+  }
+
+  /* Glass Effects */
+  .glass {
+    @apply bg-black/30 backdrop-blur-md border border-white/10;
+  }
+
+  .glass-card {
+    @apply bg-black/20 backdrop-blur-lg border border-emerald-500/20 rounded-2xl;
+  }
+
+  /* Product Card */
+  .product-card {
+    @apply bg-gradient-to-br from-black-800 to-black-700 border border-forest-700 rounded-2xl p-6 transition-all duration-500 hover:border-emerald-500 hover:shadow-glow-lg group;
+  }
+
+  /* Animation Classes */
+  .animate-float-delayed {
+    animation: float 6s ease-in-out infinite 2s;
+  }
+
+  .animate-float-delayed-4s {
+    animation: float 6s ease-in-out infinite 4s;
+  }
+
+  /* Cannabis Leaf Pattern */
+  .cannabis-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2350C878' fill-opacity='0.03'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Loading States */
+  .spinner {
+    @apply inline-block w-4 h-4 border-2 border-current border-r-transparent rounded-full animate-spin;
+  }
+
+  /* Typography */
+  .heading-xl {
+    @apply text-5xl lg:text-7xl font-bold leading-tight;
+  }
+
+  .heading-lg {
+    @apply text-4xl lg:text-5xl font-bold leading-tight;
+  }
+
+  .heading-md {
+    @apply text-3xl lg:text-4xl font-bold leading-tight;
+  }
+
+  .body-lg {
+    @apply text-xl lg:text-2xl leading-relaxed;
+  }
+
+  .body-md {
+    @apply text-lg leading-relaxed;
+  }
+
+  /* Status Indicators */
+  .status-success {
+    @apply bg-emerald-500/20 text-emerald-400 border border-emerald-500/30;
+  }
+
+  .status-warning {
+    @apply bg-gold-500/20 text-gold-400 border border-gold-500/30;
+  }
+
+  .status-error {
+    @apply bg-red-500/20 text-red-400 border border-red-500/30;
+  }
+
+  .status-info {
+    @apply bg-blue-500/20 text-blue-400 border border-blue-500/30;
+  }
+
+  /* Age Gate Styles */
+  .age-verification-overlay {
+    @apply fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm;
+  }
+
+  .age-verification-content {
+    @apply relative max-w-md w-full mx-4 bg-black-800 border border-forest-600 rounded-2xl shadow-dark-lg overflow-hidden;
+  }
+
+  /* Responsive Design Helpers */
+  @media (max-width: 640px) {
+    .mobile-padding {
+      @apply px-4;
+    }
+    
+    .mobile-text-sm {
+      @apply text-sm;
+    }
+  }
+
+  /* Print Styles */
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+  }
+
+  /* High Contrast Mode Support */
+  @media (prefers-contrast: high) {
+    .card {
+      @apply border-2;
+    }
+    
+    .btn {
+      @apply border-2;
+    }
+  }
+
+  /* Reduced Motion Support */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-float,
+    .animate-glow,
+    .animate-shimmer {
+      animation: none;
+    }
+    
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Marquee Animation */
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+}
